@@ -17,10 +17,8 @@ function getTodo(req, res) {
 
 function removeTodo(req, res) {
   todoToRemove = todos.find(todo => todo.id === +req.params.id);
-  console.log(todoToRemove)
   if (todoToRemove) {
     const remainingTodos = todos.filter(todo => todo.id !== todoToRemove.id);
-    console.log(remainingTodos)
     todos = remainingTodos;
     res.status(200).json(todoToRemove);
   } else {
