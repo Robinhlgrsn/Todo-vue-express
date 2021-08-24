@@ -4,6 +4,7 @@
     <section v-for="todo in todos" :key="todo.id"
       class="flex flex-col w-2/3 border-1 rounded my-4 shadow-xl p-4">
       <TodoItem
+        @remove-todo="removeTodo"
         :id="todo.id"
         :title="todo.title"
         :description="todo.description"
@@ -18,8 +19,14 @@ import TodoItem from '@/components/TodoItem.vue';
 export default {
   name: 'TodoList',
   props: ['todos'],
+  emits: ['remove-todo'],
   components: {
     TodoItem,
+  },
+  methods: {
+    removeTodo(id) {
+      this.$emit('remove-todo', id);
+    },
   },
 };
 </script>

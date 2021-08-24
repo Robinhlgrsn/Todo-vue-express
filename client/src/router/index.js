@@ -4,7 +4,7 @@ import AddTodo from '@/views/AddTodo.vue';
 
 const routes = [
   {
-    path: '/',
+    path: '/todos',
     name: 'Home',
     component: Home,
   },

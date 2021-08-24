@@ -1,6 +1,6 @@
 <template>
   <main class="container mx-auto">
-      <TodoList :todos="todos" />
+      <TodoList @remove-todo="removeTodo" :todos="todos" />
   </main>
 </template>
 
@@ -12,35 +12,29 @@ export default {
   components: {
     TodoList,
   },
+  emits: ['remove-todo'],
   data() {
     return {
-      todos: [
-        {
-          id: 1,
-          title: 'Learn blabla',
-          date: new Date().toLocaleDateString('se-SE', {
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-          }),
-          description: 'Det är bra att lära sig blabla',
-        },
-        {
-          id: 2,
-          title: 'Learn balbla',
-          date: new Date().toLocaleDateString('se-SE', {
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-          }),
-          description: 'Det är bra att lära sig blabla',
-        },
-        {
-          id: 3,
-          title: 'Learn blabaala',
-          date: new Date().toLocaleDateString('se-SE', {
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-          }),
-          description: 'Det är bra att lära sig blabla',
-        },
-      ],
+      todos: [],
     };
+  },
+  async created() {
+    const response = await fetch('http://localhost:8000/todos');
+    const data = await response.json();
+    this.todos = data;
+  },
+  methods: {
+    async removeTodo(id) {
+      try {
+        const response = await fetch(`http://localhost:8000/todos/${id}`, {
+          method: 'DELETE',
+        });
+        const data = await response.json();
+        this.todos = this.todos.filter((todo) => todo.id !== data.id);
+      } catch (err) {
+        console.log(err, 'i error');
+      }
+    },
   },
 };
 </script>
