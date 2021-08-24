@@ -12,7 +12,7 @@
       <p>28 Augusti 2021 12:00</p>
     </section>
     <section class="text-center m-4">
-      <p>Det här är kul att lära sig express!</p>
+      <p>Det är kul att lära sig express!</p>
     </section>
   </div>
 </template>
