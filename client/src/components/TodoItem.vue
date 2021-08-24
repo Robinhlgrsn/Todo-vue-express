@@ -5,7 +5,7 @@
       <h1 class="flex text-3xl">{{ title }}</h1>
       </div>
       <div class="flex justify-end">
-      <button class="w-6 rounded shadow bg-green-200">X</button>
+      <button class="w-6 rounded shadow bg-green-200 font-bold hover:bg-green-500">X</button>
       </div>
     </header>
     <section class="font-bold text-center">
