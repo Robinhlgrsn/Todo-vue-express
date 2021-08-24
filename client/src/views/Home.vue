@@ -1,11 +1,11 @@
 <template>
   <div>
-    <AppHeader @toggle-form="toggleTodoForm" />
+    <AppHeader @onToggleForm="toggleTodoForm" :toggleForm="toggleForm" />
     <main class="container mx-auto" v-if="!toggleForm">
         <TodoList :error="error" @remove-todo="removeTodo" :todos="todos" />
     </main>
     <section class="container mx-auto" v-else>
-      <TodoForm />
+      <TodoForm @submitNewTodo="postNewTodo" />
     </section>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     TodoForm,
     AppHeader,
   },
-  emits: ['remove-todo', 'toggle-form'],
+  emits: ['remove-todo', 'onToggleForm', 'submitNewTodo'],
   data() {
     return {
       todos: [],
@@ -47,6 +47,22 @@ export default {
         });
         const data = await response.json();
         this.todos = this.todos.filter((todo) => todo.id !== data.id);
+      } catch (err) {
+        this.error = true;
+      }
+    },
+    async postNewTodo(object) {
+      try {
+        const response = await fetch('http://localhost:8000/todos', {
+          method: 'POST',
+          body: JSON.stringify(object),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = response.json();
+        this.todos.push(data);
+        this.toggleForm = false;
       } catch (err) {
         this.error = true;
       }

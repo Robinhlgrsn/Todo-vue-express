@@ -1,8 +1,9 @@
 <template>
   <header class="flex justify-center py-5 bg-green-200">
     <section class="flex container mx-auto">
-      <nav class="flex font-bold w-2/3 space-x-3" v-if="toggleForm">
-        <button @click.prevent="toggleForm">Add Todo</button>
+      <nav class="flex font-bold w-2/3 space-x-3">
+        <button @click.prevent="onToggleForm"  v-if="!toggleForm">Add Todo</button>
+        <button @click.prevent="onToggleForm" v-else>Todos</button>
       </nav>
     </section>
   </header>
@@ -11,9 +12,10 @@
 <script>
 export default {
   name: 'Header',
+  props: ['toggleForm'],
   methods: {
-    toggleForm() {
-      this.$emit('toggle-form');
+    onToggleForm() {
+      this.$emit('onToggleForm');
     },
   },
 };
