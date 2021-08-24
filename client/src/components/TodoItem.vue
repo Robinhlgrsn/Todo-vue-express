@@ -5,11 +5,13 @@
       <h1 class="flex text-3xl">{{ title }}</h1>
       </div>
       <div class="flex justify-end">
-      <button class="w-6 rounded shadow bg-green-200 font-bold hover:bg-green-500">X</button>
+      <button @click="onRemoveTodo"
+        class="w-6 rounded shadow bg-green-200 font-bold hover:bg-green-500">X</button>
       </div>
     </header>
     <section class="font-bold text-center">
-      <p>{{ date }}</p>
+      <p>{{ new Date(date).toLocaleDateString('se-SE', {
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' } ) }}</p>
     </section>
     <section class="text-center m-4">
       <p>{{ description }}</p>
@@ -20,7 +22,13 @@
 <script>
 export default {
   name: 'TodoItem',
-  props: ['title', 'description', 'date'],
+  props: ['title', 'description', 'date', 'id'],
+  emits: ['remove-todo'],
+  methods: {
+    onRemoveTodo() {
+      this.$emit('remove-todo', this.id);
+    },
+  },
 };
 </script>
 

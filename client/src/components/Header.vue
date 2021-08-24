@@ -2,8 +2,8 @@
   <header class="flex justify-center py-5 bg-green-200">
     <section class="flex container mx-auto">
       <nav class="flex font-bold w-2/3 space-x-3">
-        <router-link :to="{name: 'Home' }">Todo</router-link>
-        <router-link to="/addTodo">Add new Todo</router-link>
+        <button @click.prevent="onToggleForm"  v-if="!toggleForm">Add Todo</button>
+        <button @click.prevent="onToggleForm" v-else>My Todos</button>
       </nav>
     </section>
   </header>
@@ -12,6 +12,12 @@
 <script>
 export default {
   name: 'Header',
+  props: ['toggleForm'],
+  methods: {
+    onToggleForm() {
+      this.$emit('onToggleForm');
+    },
+  },
 };
 </script>
 
