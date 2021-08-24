@@ -8,13 +8,13 @@ const todos = [
   {
     id: 2,
     title: 'Learn Vue',
-    date: '2021-08-24',
+    date: '2021-08-25',
     description: 'Vue is the best!',
   },
   {
     id: 3,
     title: 'Learn Angular!',
-    date: '2021-08-24',
+    date: '2021-08-26',
     description: 'Angular is the best!',
   },
 ]

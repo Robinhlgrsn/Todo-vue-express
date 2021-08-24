@@ -2,6 +2,7 @@
   <div>
     <AppHeader @onToggleForm="toggleTodoForm" :toggleForm="toggleForm" />
     <main class="container mx-auto" v-if="!toggleForm">
+    <button @click.prevent="sortTodos">ASC / DESC</button>
         <TodoList :error="error" @remove-todo="removeTodo" :todos="todos" />
     </main>
     <section class="container mx-auto" v-else>
@@ -70,6 +71,10 @@ export default {
     },
     toggleTodoForm() {
       this.toggleForm = !this.toggleForm;
+    },
+    sortTodos() {
+      const sortering = this.todos.sort((a, b) => new Date(a.date) - new Date(b.date));
+      console.log(sortering);
     },
   },
 };

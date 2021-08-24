@@ -28,7 +28,7 @@ export default {
       this.$emit('submitNewTodo', {
         id: Math.floor(Math.random() * 10000000),
         title: this.title,
-        date: new Date(this.date).toString(),
+        date: this.date,
         description: this.description,
       });
     },
