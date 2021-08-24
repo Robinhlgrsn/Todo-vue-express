@@ -1,6 +1,6 @@
 <template>
   <main class="container mx-auto">
-    <section class="flex flex-col items-center">
+    <section class="flex flex-col items-center mt-10">
       <h1 class="text-5xl mb-5">TodosPage</h1>
       <!-- TODO LIST -->
       <TodoItem />

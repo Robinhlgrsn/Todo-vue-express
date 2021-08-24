@@ -12,6 +12,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  linkExactActiveClass: 'text-gray-500',
 });
 
 export default router;
