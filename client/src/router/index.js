@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/views/Home.vue';
+import AddTodo from '@/views/AddTodo.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/addtodo',
+    name: 'AddTodo',
+    component: AddTodo,
   },
 ];
 
