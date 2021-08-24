@@ -1,20 +1,46 @@
 <template>
   <main class="container mx-auto">
-    <section class="flex flex-col items-center mt-10">
-      <h1 class="text-5xl mb-5">TodosPage</h1>
-      <!-- TODO LIST -->
-      <TodoItem />
-    </section>
+      <TodoList :todos="todos" />
   </main>
 </template>
 
 <script>
-import TodoItem from '@/components/TodoItem.vue';
+import TodoList from '@/components/TodoList.vue';
 
 export default {
   name: 'Home',
   components: {
-    TodoItem,
+    TodoList,
+  },
+  data() {
+    return {
+      todos: [
+        {
+          id: 1,
+          title: 'Learn blabla',
+          date: new Date().toLocaleDateString('se-SE', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+          }),
+          description: 'Det är bra att lära sig blabla',
+        },
+        {
+          id: 2,
+          title: 'Learn balbla',
+          date: new Date().toLocaleDateString('se-SE', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+          }),
+          description: 'Det är bra att lära sig blabla',
+        },
+        {
+          id: 3,
+          title: 'Learn blabaala',
+          date: new Date().toLocaleDateString('se-SE', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+          }),
+          description: 'Det är bra att lära sig blabla',
+        },
+      ],
+    };
   },
 };
 </script>
