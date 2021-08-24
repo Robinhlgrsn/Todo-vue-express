@@ -1,6 +1,8 @@
 <template>
 <section class="flex flex-col items-center mt-10">
-  <h1 class="text-6xl font-bold">Todos!</h1>
+  <h1 class="text-6xl font-bold" v-if="todos.length > 0">Todos!</h1>
+  <h1 class="text-red-500 text-3xl font-bold" v-else-if="error">Could not fetch todos!</h1>
+  <h1 class="text-3xl font-bold" v-else>No todos remaining</h1>
     <section v-for="todo in todos" :key="todo.id"
       class="flex flex-col w-2/3 border-1 rounded my-4 shadow-xl p-4">
       <TodoItem
@@ -18,7 +20,7 @@ import TodoItem from '@/components/TodoItem.vue';
 
 export default {
   name: 'TodoList',
-  props: ['todos'],
+  props: ['todos', 'error'],
   emits: ['remove-todo'],
   components: {
     TodoItem,
