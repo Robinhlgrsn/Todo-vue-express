@@ -8,7 +8,7 @@
         v-model="description"
         class="m-4 border shadow py-2 px-3"
         placeholder="description" type="text">
-      <button class="border rounded bg-green-200 hover:bg-green-500  py-1">Add Todo</button>
+      <button class="border rounded bg-green-200 hover:bg-green-500 py-1">Add Todo</button>
     </form>
   </section>
 </template>
@@ -28,7 +28,7 @@ export default {
       this.$emit('submitNewTodo', {
         id: Math.floor(Math.random() * 10000000),
         title: this.title,
-        date: this.date,
+        date: new Date(this.date).toString(),
         description: this.description,
       });
     },

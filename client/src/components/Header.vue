@@ -3,7 +3,7 @@
     <section class="flex container mx-auto">
       <nav class="flex font-bold w-2/3 space-x-3">
         <button @click.prevent="onToggleForm"  v-if="!toggleForm">Add Todo</button>
-        <button @click.prevent="onToggleForm" v-else>Todos</button>
+        <button @click.prevent="onToggleForm" v-else>My Todos</button>
       </nav>
     </section>
   </header>

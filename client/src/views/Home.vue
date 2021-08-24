@@ -51,16 +51,17 @@ export default {
         this.error = true;
       }
     },
-    async postNewTodo(object) {
+    async postNewTodo(formObject) {
       try {
         const response = await fetch('http://localhost:8000/todos', {
           method: 'POST',
-          body: JSON.stringify(object),
+          body: JSON.stringify(formObject),
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const data = response.json();
+        const data = await response.json();
+        console.log(data);
         this.todos.push(data);
         this.toggleForm = false;
       } catch (err) {
