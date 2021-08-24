@@ -1,0 +1,23 @@
+{
+  "name": "todo-vue-express",
+  "version": "1.0.0",
+  "description": "Todo App built with VueJS and Express",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve --prefix client",
+    "server": "npm run watch --prefix server",
+    "watch": "npm run server & npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robinhlgrsn/Todo-vue-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robinhlgrsn/Todo-vue-express/issues"
+  },
+  "homepage": "https://github.com/Robinhlgrsn/Todo-vue-express#readme"
+}

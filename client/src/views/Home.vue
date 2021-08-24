@@ -2,7 +2,6 @@
   <div>
     <AppHeader @onToggleForm="toggleTodoForm" :toggleForm="toggleForm" />
     <main class="container mx-auto" v-if="!toggleForm">
-    <button @click.prevent="sortTodos">ASC / DESC</button>
         <TodoList :error="error" @remove-todo="removeTodo" :todos="todos" />
     </main>
     <section class="container mx-auto" v-else>
