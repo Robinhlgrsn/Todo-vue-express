@@ -1,10 +1,17 @@
 <template>
-  <h1>Add New todo!</h1>
+  <main class="container mx-auto">
+    <TodoForm />
+  </main>
 </template>
 
 <script>
+import TodoForm from '@/components/TodoForm.vue';
+
 export default {
   name: 'AddTodo',
+  components: {
+    TodoForm,
+  },
 };
 </script>
 
