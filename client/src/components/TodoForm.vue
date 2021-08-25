@@ -1,14 +1,15 @@
 <template>
   <section class="flex flex-col items-center mt-10">
-    <h1 class="text-6xl font-bold my-4">Add new Todo</h1>
-    <form @submit.prevent="submitTodo" class="flex flex-col rounded shadow m4 p-10">
+    <h1 class="text-5xl font-bold my-4">Add new Todo</h1>
+    <form @submit.prevent="submitTodo" class="flex flex-col w-2/3 rounded shadow-lg p-10 mx-10">
       <input v-model="title" class="my-4 border shadow py-2 px-3" placeholder="title" type="text">
-      <input v-model="date" class="m-4" type="date">
+      <input v-model="date" class="my-4 " type="date">
       <textarea
         v-model="description"
         class="box-border max-w-full my-4 border shadow py-2 px-3"
         placeholder="description"></textarea>
-      <button class="border rounded bg-green-200 hover:bg-green-500 py-1">Add Todo</button>
+      <button class="border font-bold
+        rounded bg-green-200 hover:bg-green-500 mx-5 py-1">Add Todo</button>
       <div class="flex justify-center" v-if="error.length > 0">
         <p class="text-red-500">
         {{error[0]}}
