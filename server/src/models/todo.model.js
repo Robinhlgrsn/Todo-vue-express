@@ -17,6 +17,6 @@ const todos = [
     date: '2021-08-26',
     description: 'Get better at Vue!',
   },
-]
+];
 
 module.exports = todos;
