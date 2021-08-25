@@ -1,5 +1,5 @@
 # Todo-vue-express
-**Simple todo app built with Vue 3 with TailwindCss and NodeJs Express.  
+**Simple todo app built with Vue 3 with TailwindCSS and NodeJs Express.  
 View, add and delete todos.**. 
 
 
