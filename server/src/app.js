@@ -8,12 +8,14 @@ const todoRouter = require('./router/todo.router')
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..', '..', 'client', 'dist')))
+
+app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.use(todoRouter);
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', '..', 'client', 'dist', 'index.html'))
+  console.log(__dirname)
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 module.exports = app;

@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col items-center mt-10">
-    <h1 class="text-6xl font-bold my-4">Add new Todo!</h1>
+    <h1 class="text-6xl font-bold my-4">Add new Todo</h1>
     <form @submit.prevent="submitTodo" class="flex flex-col rounded shadow m4 p-10">
       <input v-model="title" class="m-4 border shadow py-2 px-3" placeholder="title" type="text">
       <input v-model="date" class="m-4" type="date">

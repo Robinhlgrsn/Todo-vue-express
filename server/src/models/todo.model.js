@@ -1,21 +1,21 @@
 const todos = [
   {
     id: 1,
-    title: 'Learn React',
+    title: 'Shopping',
     date: '2021-08-24',
-    description: 'React is the best!',
+    description: 'Go shopping',
   },
   {
     id: 2,
-    title: 'Learn Vue',
+    title: 'Read',
     date: '2021-08-25',
-    description: 'Vue is the best!',
+    description: 'study etc.....',
   },
   {
     id: 3,
-    title: 'Learn Angular!',
+    title: 'Learn Vue',
     date: '2021-08-26',
-    description: 'Angular is the best!',
+    description: 'Get better at Vue!',
   },
 ]
 
