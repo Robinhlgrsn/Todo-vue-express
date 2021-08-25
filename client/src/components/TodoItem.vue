@@ -2,11 +2,11 @@
   <div>
     <header class="flex flex-row">
       <div class="flex-1">
-      <h1 class="flex text-3xl">{{ title }}</h1>
+      <h1 class="flex font-bold text-3xl">{{ title }}</h1>
       </div>
       <div class="flex justify-end">
       <button @click="onRemoveTodo"
-        class="w-6 rounded shadow bg-green-200 font-bold hover:bg-green-500">X</button>
+        class="w-6 my-1 rounded shadow bg-green-200 font-bold hover:bg-green-500">X</button>
       </div>
     </header>
     <section class="font-bold text-center">
@@ -14,7 +14,7 @@
         weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' } ) }}</p>
     </section>
     <section class="text-center m-4">
-      <p>{{ description }}</p>
+      <p class="break-words">{{ description }}</p>
     </section>
   </div>
 </template>
