@@ -29,7 +29,6 @@ function removeTodo(req, res) {
 }
 
 function addTodo(req, res) {
-  console.log(req.body)
   if(req.body) {
     res.status(200).json(req.body);
     todos.push(req.body);
