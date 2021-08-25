@@ -1,13 +1,12 @@
 <template>
-  <div>
-  <!-- header component -->
-    <RouterView />
-  </div>
+  <AppHome />
 </template>
 <script>
+import AppHome from '@/views/Home.vue';
 
 export default {
   components: {
+    AppHome,
   },
 };
 
